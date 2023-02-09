@@ -1,5 +1,5 @@
-const myEmptyDiv = document.querySelector("#myEmptyDiv");
-const heading = document.createElement('h1');
+let myEmptyDiv = document.querySelector('#myEmptyDiv');
+let heading = document.createElement('h1');
 
 
 heading.innerHTML = 'Llamas';
