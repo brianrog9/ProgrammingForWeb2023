@@ -102,7 +102,7 @@ function mousePressed() {
     }
     // if (mouseX > x1 && mouseY > y1 && mouseX < x1 + sz1 && mouseY < y1 + sz1){
     //     console.log('pressed');
-        
+            
     // }
     if (mouseX > x2 && mouseY > y2 && mouseX < x2 + sz2 && mouseY < y2 + sz2){
         console.log('pressed');
