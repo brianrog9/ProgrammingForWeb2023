@@ -1,3 +1,29 @@
+#myApp {
+  text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:#303030;
+    letter-spacing: 4px;
+    padding-bottom: 60px;
+    text-transform: uppercase;
+    padding-left: 30px;
+}
+
+li {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    padding-bottom: 15px;
+}
+
+body {
+    background-color: antiquewhite;
+}
 
 
 

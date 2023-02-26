@@ -8,7 +8,21 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    
+    <div id="myApp">
+      <h1>Crazy Llama Facts!</h1>
+      <ul>
+        <li>{{Lbite}}</li>
+        <li>{{Lveg}}</li>
+        <li>{{Lage}}</li>
+        <li>{{Lbaby}}</li>
+        <li>{{Lpop}}</li>
+        <li>{{Lsize}}</li>
+        <li>{{Lguard}}</li>
+        <li>{{Lcarry}}</li>
+        <li>{{Lspit}}</li>
+        <li v-if="curious">{{Langry}}</li>
+      </ul>
+    </div>
   </body>
   <script type="text/javascript" src="js/main.js" ></script>
 </html>
