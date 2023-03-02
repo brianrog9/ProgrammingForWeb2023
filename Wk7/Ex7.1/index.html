@@ -8,7 +8,13 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    
+    <div id="myApp" v-cloak>
+      <h1 :style="headStyle"> Llama vs Alpaca</h1>
+      <div id="Imgholder">
+        <a :href="llamalink"><img src="./img/Llama.PNG" alt="llama illustration"></a>
+        <a :href="alpacalink"><img src="./img/Alpaca.PNG" alt="alpaca illustration"></a>
+      </div>
+    </div>
   </body>
   <script type="text/javascript" src="js/main.js" ></script>
 </html>
