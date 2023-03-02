@@ -15,8 +15,9 @@
           <span class="rank">Rank</span>
           <span class="name">Name</span>
         </div>
-        <div>
-          
+        <div class="rank-container" v-for="(critter, index) in llamas" :class="{even: (index +1) % 2 === 0, odd: (index +1) % 2 !==0}">
+            <span class="rank-item">{{critter.rank}}</span>
+            <span class="rank-item" :class="{'bold': critter.name.toLowerCase().includes('llama')}">{{critter.name}}</span>
         </div>
       </div>
     </div>
