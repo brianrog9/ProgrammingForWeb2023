@@ -8,7 +8,27 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    
+    <h1>Boardgame Collection</h1>
+    <div id="myCollectionApp">
+      <table>
+        <thead>
+          <th></th>
+          <th>Name</th>
+          <th>Released</th>
+          <th>Players</th>
+          <th>Quick View</th>
+        </thead>
+        <tbody>
+          <tr class="active-row" v-for="(boardgames, idx) in boardgames" v-bind:class="{odd: idx % 2 !== 0}">
+            <td><img v-bind:title="boardgames.gameName" v-bind:src="boardgames.image" v-bind:alt="boardgames.releaseDate + ' ' + boardgames.players"></td>
+            <td>{{boardgames.gameName}}</td>
+            <td>{{boardgames.players}}</td>
+            <td>{{boardgames.releaseDate}}</td>
+            <td>{{boardgames.description}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
   <script type="text/javascript" src="js/main.js" ></script>
 </html>
