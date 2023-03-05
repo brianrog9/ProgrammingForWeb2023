@@ -19,12 +19,12 @@
           <th>Quick View</th>
         </thead>
         <tbody>
-          <tr class="active-row" v-for="(boardgames, idx) in boardgames" v-bind:class="{odd: idx % 2 !== 0}">
-            <td><img v-bind:title="boardgames.gameName" v-bind:src="boardgames.image" v-bind:alt="boardgames.releaseDate + ' ' + boardgames.players"></td>
-            <td>{{boardgames.gameName}}</td>
-            <td>{{boardgames.players}}</td>
-            <td>{{boardgames.releaseDate}}</td>
-            <td>{{boardgames.description}}</td>
+          <tr class="active-row" v-for="(boardgame, idx) in boardgames" v-bind:class="{even: idx % 2 !== 1}">
+            <td><img v-bind:title="boardgame.gameName" v-bind:src="boardgame.image" v-bind:alt="boardgame.releaseDate + ' ' + boardgame.players"></td>
+            <td>{{boardgame.gameName}}</td>
+            <td>{{boardgame.players}}</td>
+            <td>{{boardgame.releaseDate}}</td>
+            <td>{{boardgame.description}}</td>
           </tr>
         </tbody>
       </table>
