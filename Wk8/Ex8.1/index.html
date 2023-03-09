@@ -13,48 +13,49 @@
         <fieldset>
           <legend>Fan Club Registration</legend>
             <div>
-              <label></label>
-              <input>
+              <label for="firstName">First Name</label>
+              <input id="firstName" v-model="firstName">
             </div> 
             <div>
-              <label></label>
-              <input>
+              <label for="lastName">Last Name</label>
+              <input id="lastName" v-model="lastName">
             </div>
              <div>
-              <label></label>
-              <input>
+              <label for="street">Street Address</label>
+              <input id="street" v-model="street">
             </div> 
             <div>
-              <label></label>
-              <select></select>
+              <label for="state">State</label>
+              <select name="" id="" v-model="state">
+                <option v-for="state in availableStates" v-bind:value="state.value">{{state.name}}</option>
+              </select>
             </div>
-            <div>
+            <div class="alpaca-color">
               <p>Favorite Alpaca Colors</p>
               <div>
                 <ul>
-                  <li>
-                    <label>
-                      <input>
+                  <li v-for="color in colors">
+                    <label v-bind:for="color.value">
+                      <input type="checkbox" v-model="selectedColors" v-bind:value="color.value" v-bind:id="color.value">
+                      {{color.name}}
                     </label>
                   </li>
                 </ul>
               </div>
             </div> 
-            <div>
-              <label>
-                <textarea></textarea>
-              </label>
+            <div class="alpaca-status">
+              <label for="status">Alpaca Status</label>
+                <textarea name="" id="" cols="30" rows="10" v-model="status"></textarea>
             </div>
-          
         </fieldset>
-        <div>
-          <h3></h3>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
-          <p></p>
+        <div class="output">
+          <h3>Output</h3>
+          <p>First Name: {{firstName}}</p>
+          <p>Last Name: {{lastName}}</p>
+          <p>Street: {{street}}</p>
+          <p>State: {{state}}</p>
+          <p>Colors: {{selectedColors}}</p>
+          <p>Status: {{status}}</p>
         </div>
       </form>
 
