@@ -35,6 +35,39 @@ th {
     color:#314044;
 }
 
+form, fieldset{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+label {
+    padding:0px 30px 0px 30px;
+}
+
+label {
+    text-align: center;
+}
+
+button {
+    background-color: #314044;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    cursor:pointer;
+  }
+
+
+  .submitButton{
+    margin-left: 95px;
+  }
 
 
 

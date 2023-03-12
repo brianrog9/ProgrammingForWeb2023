@@ -3,6 +3,14 @@ const {createApp} = Vue;
 createApp({
     data() {
         return {
+            newConsoleObj: {
+                image: "",
+                gameName: "",
+                players: "",
+                releaseDate: "", 
+                description: ""
+            },
+
             boardgames: [
             {
                 gameName: "Gloomhaven",
@@ -38,9 +46,31 @@ createApp({
                 releaseDate: "2017",
                 players: "1-4",
                 description: "Toss gobs of unique dice in an epic adventure en route to a final boss showdown."
-            },
+            }
        ]
         
     }
+},
+methods: {
+    submitHandler () {
+        console.log("submitted");
+        this.boardgames = this.boardgames.concat(this.newConsoleObj);
+        this.resetForm();
+    },
+    resetForm () {
+        this.newConsoleObj = {
+            image: "",
+            gameName: "",
+            players: "",
+            releaseDate: "", 
+            description: ""
+        }
+
+    },
+    deleteItem (item) {
+        this.boardgames = this.boardgames.filter(boardgame => {return boardgame !== item;
+        });
+    }
+
 }
 }).mount("#myCollectionApp");
