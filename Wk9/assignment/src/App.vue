@@ -1,50 +1,76 @@
 <script setup>
 import { reactive } from 'vue';
+import ItemRow from "./components/ItemRow.vue";
   const boardgames = [
               {
                 gameName: "Gloomhaven",
                 image: "img/gloomhaven.jpg",
                 releaseDate: "2017",
                 players: "1 - 4",
-                description: "Vanquish monsters with strategic cardplay. Fulfill your quest to leave your legacy"
+                description: "Vanquish monsters with strategic cardplay. Fulfill your quest to leave your legacy",
+                id: 1
             },
             {
                 gameName: "Pandemic",
                 image: "img/pandemic.jpg",
                 releaseDate: "2008",
                 players: "1-4",
-                description: "Your team of experts must prevent the world from succumbing to a viral pandemic."
+                description: "Your team of experts must prevent the world from succumbing to a viral pandemic.",
+                id: 2
             },
             {
                 gameName: "Root",
                 image: "img/root.jpg",
                 releaseDate: "2018",
                 players: "2-4",
-                description: "Decide the fate of the forest as woodland factions fight for contrasting goals."
+                description: "Decide the fate of the forest as woodland factions fight for contrasting goals.",
+                id: 3
             },
             {
                 gameName: "Spirit Island",
                 image: "img/spiritisland.png",
                 releaseDate: "2017",
                 players: "1-4",
-                description: "Island Spirits join forces using elemental powers to defend their home from invaders."
+                description: "Island Spirits join forces using elemental powers to defend their home from invaders.",
+                id: 4
             },
             {
                 gameName: "Too Many Bones",
                 image: "img/toomanybones.jpg",
                 releaseDate: "2017",
                 players: "1-4",
-                description: "Toss gobs of unique dice in an epic adventure en route to a final boss showdown."
+                description: "Toss gobs of unique dice in an epic adventure en route to a final boss showdown.",
+                id: 5
             }
   ];
   const newConsoleObj = {
      image: "",
      gameName: "",
-      players: "",
-      releaseDate: "", 
-      description: ""
-      }
-  const state = reactive({boardgames, newConsoleObj})
+     players: "",
+     releaseDate: "", 
+     description: ""
+  }
+  const state = reactive({boardgames, newConsoleObj});
+  function addNewBoardgame() {
+    state.boardgames.push({
+      image: state.newConsoleObj.image,
+      gameName: state.newConsoleObj.gameName,
+      players: state.newConsoleObj.players,
+      releaseDate: state.newConsoleObj.releaseDate,
+      description: state.newConsoleObj.description,
+      id: state.boardgames.length + 1,
+    });
+    state.newConsoleObj.image = "";
+    state.newConsoleObj.gameName = "";
+    state.newConsoleObj.players = "";
+    state.newConsoleObj.releaseDate = "";
+    state.newConsoleObj.description = "";
+  }
+  function handleDelete(itemToDelete) {
+    state.boardgames = state.boardgames.filter ((itemToCheck) => {
+      return itemToCheck !== itemToDelete;
+    });
+  }
 </script>
 
 <template>
@@ -60,20 +86,10 @@ import { reactive } from 'vue';
           <th class="cell actions">actions</th>
         </thead>
         <tbody>
-          <tr class="active-row" v-for="(boardgame, idx) in state.boardgames" v-bind:key="idx" v-bind:class="{even: idx % 2 !== 1}">
-            <td><img v-bind:title="boardgame.gameName" v-bind:src="boardgame.image" v-bind:alt="boardgame.releaseDate + ' ' + boardgame.players"></td>
-            <td>{{boardgame.gameName}}</td>
-            <td>{{boardgame.players}}</td>
-            <td>{{boardgame.releaseDate}}</td>
-            <td>{{boardgame.description}}</td>
-            <td><div class="cell actions">
-              <button type="button" v-on:click="deleteItem(boardgame)">Delete</button>
-              </div>
-            </td>
-          </tr>
+            <ItemRow v-for="(boardgame, index) in state.boardgames" v-bind:key="index" v-bind:item="boardgame" v-bind:index="index" v-on:delete-item="handleDelete"/>
         </tbody>
       </table>
-      <form v-on:submit.prevent="submitHandler">
+      <form v-on:submit.prevent="addNewBoardgame">
         <fieldset>
             <!--Adds a boardgame -->
             <legend>Add a boardgame</legend>
@@ -108,19 +124,10 @@ html {
     background-color: #aac5f2;
 }
 
-.even {
-    background: #8198b9;
-}
-
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:44px;
     color:#314044;
-}
-
-img {
-    max-width: 400px;
-    padding: 10px;
 }
 
 table {
@@ -128,12 +135,7 @@ table {
     border-collapse: collapse;
 }
 
-td {
-    text-align: center;
-    font-size: 25px;
-    padding: 0px 80px 0px 80px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+
 
 th {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -174,4 +176,6 @@ button {
   .submitButton{
     margin-left: 95px;
   }
+
+
 </style>
