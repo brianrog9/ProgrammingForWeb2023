@@ -4,7 +4,7 @@ import ItemRow from "./components/ItemRow.vue";
   const boardgames = [
               {
                 gameName: "Gloomhaven",
-                image: "img/gloomhaven.jpg",
+                image: "https://tabletopbellhop.com/wp-content/uploads/2019/07/Two_Player_Gloomhaven_Random_Dungeon.jpg",
                 releaseDate: "2017",
                 players: "1 - 4",
                 description: "Vanquish monsters with strategic cardplay. Fulfill your quest to leave your legacy",
@@ -12,7 +12,7 @@ import ItemRow from "./components/ItemRow.vue";
             },
             {
                 gameName: "Pandemic",
-                image: "img/pandemic.jpg",
+                image: "https://tabletopgamesblog.com/wp-content/uploads/2020/01/pandemic-saturday-review-scaled.jpg",
                 releaseDate: "2008",
                 players: "1-4",
                 description: "Your team of experts must prevent the world from succumbing to a viral pandemic.",
@@ -20,7 +20,7 @@ import ItemRow from "./components/ItemRow.vue";
             },
             {
                 gameName: "Root",
-                image: "img/root.jpg",
+                image: "https://assets-prd.ignimgs.com/2023/02/13/root-contents-1676323207861.jpg",
                 releaseDate: "2018",
                 players: "2-4",
                 description: "Decide the fate of the forest as woodland factions fight for contrasting goals.",
@@ -28,7 +28,7 @@ import ItemRow from "./components/ItemRow.vue";
             },
             {
                 gameName: "Spirit Island",
-                image: "img/spiritisland.png",
+                image: "https://fuzzyllamareviewscom.files.wordpress.com/2019/07/si3.jpg",
                 releaseDate: "2017",
                 players: "1-4",
                 description: "Island Spirits join forces using elemental powers to defend their home from invaders.",
@@ -36,7 +36,7 @@ import ItemRow from "./components/ItemRow.vue";
             },
             {
                 gameName: "Too Many Bones",
-                image: "img/toomanybones.jpg",
+                image: "https://jaysenheadleywrites.files.wordpress.com/2017/09/img_1682.jpg?w=1495",
                 releaseDate: "2017",
                 players: "1-4",
                 description: "Toss gobs of unique dice in an epic adventure en route to a final boss showdown.",
