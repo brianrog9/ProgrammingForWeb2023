@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShowandTell</title>
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <h1>Boardgame Collection</h1>
+    <div id="myCollectionApp">
+      <table>
+        <thead>
+          <th></th>
+          <th>Name</th>
+          <th>Released</th>
+          <th>Players</th>
+          <th>Quick View</th>
+          <th class="cell actions">actions</th>
+        </thead>
+        <tbody>
+          <tr class="active-row" v-for="(boardgame, idx) in boardgames" v-bind:class="{even: idx % 2 !== 1}">
+            <td><img v-bind:title="boardgame.gameName" v-bind:src="boardgame.image" v-bind:alt="boardgame.releaseDate + ' ' + boardgame.players"></td>
+            <td>{{boardgame.gameName}}</td>
+            <td>{{boardgame.players}}</td>
+            <td>{{boardgame.releaseDate}}</td>
+            <td>{{boardgame.description}}</td>
+            <td><div class="cell actions">
+              <button type="button" v-on:click="deleteItem(boardgame)">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <form v-on:submit.prevent="submitHandler">
+        <fieldset>
+            <!--Adds a boardgame -->
+            <legend>Add a boardgame</legend>
+            <div>
+                <label for="image">Image</label>                        
+                <input id="image" type="text" v-model="newConsoleObj.image">
+            </div>
+            <div>
+                <label for="gameName">Game Name</label>                        
+                <input id="gameName" type="text" v-model="newConsoleObj.gameName">
+            </div>
+            <div>
+                <label for="players">Number of Players</label>                        
+                <input id="players" type="text" v-model="newConsoleObj.players">
+            </div>
+            <div>
+                <label for="releaseDate">Release Date</label>                        
+                <input id="releaseDate" type="text" v-model="newConsoleObj.releaseDate">
+            </div>
+            <div>
+                <label for="description">Description</label>                        
+                <input id="description" type="text" v-model="newConsoleObj.description">
+            </div>
+            <button class="submitButton" type="submit">submit</button>
+        </fieldset>
+    </form>
+    </div>
+  </body>
+  <script type="text/javascript" src="js/main.js" ></script>
+</html>
